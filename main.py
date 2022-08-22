@@ -15,12 +15,12 @@ def game_help():
     print('Please start to guess.')
     print('-'*10)
 
-def run_game():
+def run_game(number_of_rounds):
     print(game_help())
-    print('You can guess 5 times.')
+    print(f'You can guess {number_of_rounds} times.')
     corect_word = list_of_words[8]
     
-    for i in range(5):
+    for i in range(number_of_rounds):
         user_input = get_input()
         
         if user_input == corect_word:
@@ -28,7 +28,7 @@ def run_game():
             break
         else:
             print('Your guess is Wrong.')
-            print(f'Please try again.You can guess {4 - i} times.')
+            print(f'Please try again.number of rounds left: {number_of_rounds-1 - i}')
             
-run_game()
+run_game(5)
        
