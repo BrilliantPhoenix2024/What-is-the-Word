@@ -5,7 +5,8 @@ def get_input():
         user_input = input('Enter your guess: ')
         if user_input.isalpha():
             return user_input
-        print('Your input is not corect plz enter again.')
+        else:
+            print('Your input is not corect please enter again.')
         
 def game_help():
     print('-'*10)
@@ -13,7 +14,21 @@ def game_help():
     print("All words: ", list_of_words)
     print('Please start to guess.')
     print('-'*10)
+
+def run_game():
+    print(game_help())
+    print('You can guess 5 times.')
+    corect_word = list_of_words[8]
     
-print(game_help())    
-print(get_input())
+    for i in range(5):
+        user_input = get_input()
+        
+        if user_input == corect_word:
+            print('You Won!')
+            break
+        else:
+            print('Your guess is Wrong.')
+            print(f'Please try again.You can guess {4 - i} times.')
+            
+run_game()
        
